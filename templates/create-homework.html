@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} add homework {% endblock %}</h1>
+    <p class="label">fill in:</p>
+    <form method="post" action="#">
+        <textarea name="homework"
+                  placeholder="homework"
+                  rows="5"
+                  >{{ request.form['title'] }}</textarea>
+
+        <br>
+        <input type="text" name="due"
+               placeholder="due date"
+               value="{{ request.form['due'] }}"></input>
+        <br>
+        <input type="password" name="key"
+               placeholder="key"
+               value="{{ request.form['key'] }}"></input>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

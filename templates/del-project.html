@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} delete project {% endblock %}</h1>
+    <p class="label">delete which one</p>
+    <div>
+        <form method="post" action="#">
+          {% for proj in projects %}
+            <div class="message">
+              <p class="delete_title">{{ proj['title'] }}<br>due: {{ proj['due'] }}</p>
+              <br>
+              <input type="checkbox" name="checkbox" value="{{ proj['id'] }}"></input>
+            </div>
+          {% endfor %}
+          <br>
+          <input type="password" name="proj_key"
+               placeholder="key"
+               value="{{ request.form['proj_key'] }}"></input>
+          <br>
+          <input type="submit"></input>
+        </form>
+    </div>
+    
+{% endblock %}

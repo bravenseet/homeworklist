@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="section">
+    <div class="homework-section">
+      <h1>{% block title %} HOMEWORK {% endblock %}</h1>
+      {% for hw in homework %}
+          <div class='message'>
+              <h3>{{ hw['title'] }}</h3>
+              <p class="due">due: {{ hw['due'] }}</p>
+          </div>
+      {% endfor %}
+    </div>
+  
+    <div class="project-section">
+      <h1>PROJECTS</h1>
+      {% for proj in projects %}
+          <div class='message'>
+              <h3>{{ proj['title'] }}</h3>
+              <p class="due">due: {{ proj['due'] }}</p>
+          </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+    
+    
+{% endblock %}

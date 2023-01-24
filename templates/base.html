@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <title>{% block title %} homework list {% endblock %}</title>
+</head>
+<body>
+  <div class="navbar">
+    <a class="navlinks" href="https://homeworklist.braven-seet.repl.co/">home</a>
+    <a class="navlinks" href="https://homeworklist.braven-seet.repl.co/create-homework/">createhw</a>
+    <a class="navlinks" href="https://homeworklist.braven-seet.repl.co/del-homework/">deletehw</a>
+    <a class="navlinks" href="https://homeworklist.braven-seet.repl.co/create-project/">createproj</a>
+    <a class="navlinks" href="https://homeworklist.braven-seet.repl.co/del-project/">deleteproj</a>
+  </div> 
+  
+  <div id="content">
+    {% for message in get_flashed_messages() %}
+      <div class="alert">{{ message }}</div>
+    {% endfor %}
+    {% block content %} {% endblock %}  
+  </div>
+
+  
+
+  
+</body>
+</html>

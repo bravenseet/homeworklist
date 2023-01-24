@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} add project {% endblock %}</h1>
+    <p class="label">fill in:</p>
+    <form method="post" action="#">
+        <textarea name="proj_title"
+                  placeholder="project"
+                  rows="5"
+                  >{{ request.form['proj_title'] }}</textarea>
+
+        <br>
+        <input type="text" name="proj_due"
+               placeholder="due date"
+               value="{{ request.form['proj_due'] }}"></input>
+        <br>
+        <input type="password" name="proj_key"
+               placeholder="key"
+               value="{{ request.form['proj_key'] }}"></input>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

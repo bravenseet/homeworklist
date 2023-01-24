@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} delete homework {% endblock %}</h1>
+    <p class="label">delete which one</p>
+    <div>
+        <form method="post" action="#">
+          {% for hw in homework %}
+            <div class="message">
+              <p class="delete_title">{{ hw['title'] }}<br>due: {{ hw['due'] }}</p>
+              <br>
+              <input type="checkbox" name="checkbox" value="{{ hw['id'] }}"></input>
+            </div>
+          {% endfor %}
+          <br>
+          <input type="password" name="key"
+               placeholder="key"
+               value="{{ request.form['key'] }}"></input>
+          <br>
+          <input type="submit"></input>
+        </form>
+    </div>
+    
+{% endblock %}
